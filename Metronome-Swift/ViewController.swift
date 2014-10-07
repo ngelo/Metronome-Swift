@@ -9,17 +9,27 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var tempoLabel: UILabel!
+    
+    var tempo: Int! /*{
+        set {
+            self.tempo = newValue
+            tempoLabel.text = "\(tempo)"
+        } get {
+            return self.tempo
+        }
+    }*/
 
+    // Mark - UIViewController
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tempo = 120
+        
+        tempoLabel.text = "\(tempo)"
         // Do any additional setup after loading the view, typically from a nib.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
