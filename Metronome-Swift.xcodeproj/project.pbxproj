@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B897AC7719E4AC8700820251 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B897AC7619E4AC8700820251 /* AppDelegate.swift */; };
 		B897AC7919E4AC8700820251 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B897AC7819E4AC8700820251 /* ViewController.swift */; };
+		B897AC7919E4AC8700820251 /* MetronomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B897AC7819E4AC8700820251 /* MetronomeViewController.swift */; };
 		B897AC7C19E4AC8700820251 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B897AC7A19E4AC8700820251 /* Main.storyboard */; };
 		B897AC7E19E4AC8700820251 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B897AC7D19E4AC8700820251 /* Images.xcassets */; };
 		B897AC8119E4AC8700820251 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B897AC7F19E4AC8700820251 /* LaunchScreen.xib */; };
@@ -30,6 +31,7 @@
 		B897AC7519E4AC8700820251 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B897AC7619E4AC8700820251 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B897AC7819E4AC8700820251 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B897AC7819E4AC8700820251 /* MetronomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeViewController.swift; sourceTree = "<group>"; };
 		B897AC7B19E4AC8700820251 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B897AC7D19E4AC8700820251 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B897AC8019E4AC8700820251 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 			children = (
 				B897AC7619E4AC8700820251 /* AppDelegate.swift */,
 				B897AC7819E4AC8700820251 /* ViewController.swift */,
+				B897AC7819E4AC8700820251 /* MetronomeViewController.swift */,
 				B897AC7A19E4AC8700820251 /* Main.storyboard */,
 				B897AC7D19E4AC8700820251 /* Images.xcassets */,
 				B897AC7F19E4AC8700820251 /* LaunchScreen.xib */,
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B897AC7919E4AC8700820251 /* ViewController.swift in Sources */,
+				B897AC7919E4AC8700820251 /* MetronomeViewController.swift in Sources */,
 				B897AC7719E4AC8700820251 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
