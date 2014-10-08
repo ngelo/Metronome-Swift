@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Metronome View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Metronome_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MetronomeViewController" customModule="Metronome_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -17,24 +17,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="150" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3tn-FT-1Zy">
-                                <rect key="frame" x="183" y="28" width="234" height="165.5"/>
+                                <rect key="frame" x="183" y="28" width="234" height="166"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="140"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="300" translatesAutoresizingMaskIntoConstraints="NO" id="X1s-Fr-ZPz">
+                                <rect key="frame" x="253" y="202" width="94" height="29"/>
+                                <connections>
+                                    <action selector="tempoChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="gPi-fu-pbZ"/>
+                                </connections>
+                            </stepper>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k6e-HS-q4j">
+                                <rect key="frame" x="250" y="239" width="100" height="100"/>
+                                <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="Play"/>
+                                <connections>
+                                    <action selector="toggleMetronome:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jJ3-4z-1Je"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="k6e-HS-q4j" secondAttribute="centerX" id="IwE-LX-jVf"/>
+                            <constraint firstItem="k6e-HS-q4j" firstAttribute="top" secondItem="X1s-Fr-ZPz" secondAttribute="bottom" constant="8" id="UQx-wn-N1g"/>
+                            <constraint firstItem="X1s-Fr-ZPz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="202" id="WYA-er-xzu"/>
+                            <constraint firstAttribute="centerX" secondItem="X1s-Fr-ZPz" secondAttribute="centerX" id="gej-O5-3X6"/>
                             <constraint firstItem="3tn-FT-1Zy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="jyv-55-hdz"/>
                             <constraint firstAttribute="centerX" secondItem="3tn-FT-1Zy" secondAttribute="centerX" id="uKo-PX-loa"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tempoLabel" destination="3tn-FT-1Zy" id="7jv-Ee-Ofb"/>
+                        <outlet property="tempoLabel" destination="3tn-FT-1Zy" id="Caf-OG-oac"/>
+                        <outlet property="tempoStepper" destination="X1s-Fr-ZPz" id="kUo-EH-8BZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="Play" width="100" height="100"/>
+    </resources>
 </document>
