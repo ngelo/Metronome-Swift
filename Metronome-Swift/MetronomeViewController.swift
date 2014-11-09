@@ -12,7 +12,7 @@ import AVFoundation
 
 class MetronomeViewController: UIViewController {
     
-    @IBOutlet weak var tempoLabel: UILabel!
+    @IBOutlet weak var tempoTextField: UITextField!
     @IBOutlet weak var tempoStepper: UIStepper!
     
     var metronomeTimer: NSTimer!
@@ -23,7 +23,7 @@ class MetronomeViewController: UIViewController {
     
     var tempo: NSTimeInterval = 60 {
         didSet {
-            tempoLabel.text = String(format: "%.0f", tempo)
+            tempoTextField.text = String(format: "%.0f", tempo)
             tempoStepper.value = Double(tempo)
         }
     }
@@ -51,8 +51,11 @@ class MetronomeViewController: UIViewController {
             
             // Enable the metronome stepper.
             tempoStepper.enabled = true
+            
+            // Enable editing the tempo text field.
+            tempoTextField.enabled = true
         }
-        
+            
         // If the metronome is currently off, start the metronome and change
         // the image of the toggle metronome button to the "Start" image and
         // its tint color to green
@@ -72,7 +75,18 @@ class MetronomeViewController: UIViewController {
             
             // Disable the metronome stepper.
             tempoStepper.enabled = false
+            
+            // Hide the keyboard
+            tempoTextField.resignFirstResponder()
+            
+            // Disable editing the tempo text field.
+            tempoTextField.enabled = false
         }
+    }
+    
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        // Hide the keyboard
+        tempoTextField.resignFirstResponder()
     }
     
     func playMetronomeSound() {
@@ -96,5 +110,7 @@ class MetronomeViewController: UIViewController {
         metronomeSoundPlayer = AVAudioPlayer(contentsOfURL: metronomeSoundURL, error: nil)
         metronomeSoundPlayer.prepareToPlay()
     }
+    
+    // MARK: - UIResponder
 }
 
