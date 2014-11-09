@@ -13,6 +13,7 @@
 		B897AC7E19E4AC8700820251 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B897AC7D19E4AC8700820251 /* Images.xcassets */; };
 		B897AC8119E4AC8700820251 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B897AC7F19E4AC8700820251 /* LaunchScreen.xib */; };
 		B897AC8D19E4AC8700820251 /* Metronome_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B897AC8C19E4AC8700820251 /* Metronome_SwiftTests.swift */; };
+		B8EE6E9A1A0F050000EA0EF3 /* metronomeClick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B8EE6E991A0F050000EA0EF3 /* metronomeClick.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		B897AC8619E4AC8700820251 /* Metronome-SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Metronome-SwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B897AC8B19E4AC8700820251 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B897AC8C19E4AC8700820251 /* Metronome_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metronome_SwiftTests.swift; sourceTree = "<group>"; };
+		B8EE6E991A0F050000EA0EF3 /* metronomeClick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = metronomeClick.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				B897AC7A19E4AC8700820251 /* Main.storyboard */,
 				B897AC7D19E4AC8700820251 /* Images.xcassets */,
 				B897AC7F19E4AC8700820251 /* LaunchScreen.xib */,
+				B8EE6E991A0F050000EA0EF3 /* metronomeClick.mp3 */,
 				B897AC7419E4AC8700820251 /* Supporting Files */,
 			);
 			path = "Metronome-Swift";
@@ -193,6 +196,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8EE6E9A1A0F050000EA0EF3 /* metronomeClick.mp3 in Resources */,
 				B897AC7C19E4AC8700820251 /* Main.storyboard in Resources */,
 				B897AC8119E4AC8700820251 /* LaunchScreen.xib in Resources */,
 				B897AC7E19E4AC8700820251 /* Images.xcassets in Resources */,
