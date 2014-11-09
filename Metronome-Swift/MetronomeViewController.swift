@@ -8,23 +8,29 @@
 
 import UIKit
 
+import AVFoundation
+
 class MetronomeViewController: UIViewController {
     
     @IBOutlet weak var tempoLabel: UILabel!
     @IBOutlet weak var tempoStepper: UIStepper!
     
+    var metronomeTimer: NSTimer!
+    
     var metronomeIsOn = false
     
-    var tempo: Int = 60 {
+    var metronomeSoundPlayer: AVAudioPlayer!
+    
+    var tempo: NSTimeInterval = 60 {
         didSet {
-            tempoLabel.text = "\(tempo)"
+            tempoLabel.text = String(format: "%.0f", tempo)
             tempoStepper.value = Double(tempo)
         }
     }
     
     @IBAction func tempoChanged(var tempoStepper: UIStepper) {
         // Save the new tempo.
-        tempo = Int(tempoStepper.value)
+        tempo = tempoStepper.value
     }
     
     @IBAction func toggleMetronome(var toggleMetronomeButton: UIButton) {
@@ -35,12 +41,16 @@ class MetronomeViewController: UIViewController {
             // Mark the metronome as off.
             metronomeIsOn = false
             
-            // TODO: Stop the metronome sound.
+            // Stop the metronome.
+            metronomeTimer?.invalidate()
             
             // Change the toggle metronome button's image to "Play" and tint
             // color to green.
             toggleMetronomeButton.setImage(UIImage(named: "Play"), forState: .Normal)
             toggleMetronomeButton.tintColor = UIColor.greenColor()
+            
+            // Enable the metronome stepper.
+            tempoStepper.enabled = true
         }
         
         // If the metronome is currently off, start the metronome and change
@@ -50,13 +60,26 @@ class MetronomeViewController: UIViewController {
             // Mark the metronome as on.
             metronomeIsOn = true
             
-            // TODO: Start the metronome sound.
+            // Start the metronome.
+            let metronomeTimeInterval:NSTimeInterval = 60.0 / tempo
+            metronomeTimer = NSTimer.scheduledTimerWithTimeInterval(metronomeTimeInterval, target: self, selector: Selector("playMetronomeSound"), userInfo: nil, repeats: true)
+            metronomeTimer?.fire()
             
             // Change the toggle metronome button's image to "Stop" and tint
             // color to red.
             toggleMetronomeButton.setImage(UIImage(named: "Stop"), forState: .Normal)
             toggleMetronomeButton.tintColor = UIColor.redColor()
+            
+            // Disable the metronome stepper.
+            tempoStepper.enabled = false
         }
+    }
+    
+    func playMetronomeSound() {
+        let currentTime = CFAbsoluteTimeGetCurrent()
+        println("Play metronome sound @ \(currentTime)")
+        
+        metronomeSoundPlayer.play()
     }
 
     // MARK: - UIViewController
@@ -67,6 +90,11 @@ class MetronomeViewController: UIViewController {
         
         // Set the inital value of the tempo.
         tempo = 120
+        
+        // Initialize the sound player
+        let metronomeSoundURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("metronomeClick", ofType: "mp3")!)
+        metronomeSoundPlayer = AVAudioPlayer(contentsOfURL: metronomeSoundURL, error: nil)
+        metronomeSoundPlayer.prepareToPlay()
     }
 }
 
